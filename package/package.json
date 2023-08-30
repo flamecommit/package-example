@@ -1,12 +1,22 @@
 {
-  "name": "package",
+  "name": "@shinyongjun/package-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc --outDir dist/esm --module esnext",
+    "build:cjs": "tsc --outDir dist/cjs --module commonjs"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2"
+  }
 }
